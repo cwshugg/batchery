@@ -12,3 +12,9 @@ To run this, call it's name in CMD, and that's it. Depending on if the "googledr
 This is a more involved version of gsync, but with a built-in timer. This takes in up to 2 command-line arguments, the main one being a time (number of seconds). This launches Backup & Sync, waits for the given amount of seconds, then closes Backup & Sync. The third command-line argument is optional: "-s". If this argument is provided, the script will shut down Windows after the given time interval.
 #### Running
 To run: type "gsynct [time] [shutdown?]", with [time] being some number (of seconds), and [shutdown?] being either "-s" or blank. You can also simply type "gsynct", and it will default to running Backup & Sync for 3600 seconds (1 hour) without the automatic shutdown.
+
+## clean
+This script empties out the recycling bin and the downloads folder, and launches Window's built-in disk-cleanup script.
+
+## clean_setup
+A set-up script that launches the Window's disk-cleanup script in configuration mode, allowing you to choose what files you want to be cleaned when Disk Cleanup is run.
