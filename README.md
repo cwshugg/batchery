@@ -22,4 +22,4 @@ A set-up script that launches the Window's disk-cleanup script in configuration 
 ## rlogin
 This is a script I wrote to use mainly for connecting to/transferring files between my Windows machine and Virginia Tech's Computer Science remote login servers. These servers are/were used for projects and various assignments, so moving things between them is pretty common.
 #### Running
-To get started, just enter "rlogin help" into the command prompt. A menu with all the commands will be shown.
+Before starting, open up the file and read the header comments to figure out how to add the correct file paths/addresses to get SSH to work properly. After that, just enter "rlogin help" into the command prompt. A menu with all the commands will be shown.
