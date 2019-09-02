@@ -18,3 +18,8 @@ This script empties out the recycling bin and the downloads folder, and launches
 
 ## clean_setup
 A set-up script that launches the Window's disk-cleanup script in configuration mode, allowing you to choose what files you want to be cleaned when Disk Cleanup is run.
+
+## rlogin
+This is a script I wrote to use mainly for connecting to/transferring files between my Windows machine and Virginia Tech's Computer Science remote login servers. These servers are/were used for projects and various assignments, so moving things between them is pretty common.
+#### Running
+To get started, just enter "rlogin help" into the command prompt. A menu with all the commands will be shown.
