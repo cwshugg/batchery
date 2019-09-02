@@ -62,11 +62,11 @@ if %action%=="help" (
     echo    rlogin help                              Displays help menu
     echo.
     echo    rlogin [pulldown/pd]     [src] [dest]    Downloads files from RLogin specified by [src] to the
-    echo                                            directory specified by [dest], or to the desktop if
-    echo                                            [dest] is left empty
+    echo                                             directory specified by [dest], or to the desktop if
+    echo                                             [dest] is left empty
     echo.
     echo    rlogin [pushup/pu]       [src] [dest]    Uploads files from [src] path on Windows to the RLogin
-    echo                                            path, inside the home directory, specified by [dest]
+    echo                                             path, inside the home directory, specified by [dest]
     echo   -------------------------------------------------------------------------------------------------
     
     :: jump out of script
