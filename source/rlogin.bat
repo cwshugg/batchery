@@ -22,10 +22,11 @@ echo.
 echo -----===== [VT CS Remote Login Helper Script] =====-----
 
 :: set up "global" variables used by most actions
-set g_user="your_pid_here"
-set g_address="rlogin_address_here"
-set g_homedir="path_to_your_home_directory_on_rlogin_here"
-set g_defaultdir="default_windows_save_directory_here"
+set g_user="cwshugg"
+set g_address="rlogin.cs.vt.edu"
+set g_portal_address="portal.cs.vt.edu"
+set g_homedir="/home/ugrads/nonmajors/"%g_user:"=%"/"
+set g_defaultdir="C:\Users\Connor\Desktop\"
 
 :: get the first input argument and format it
 set action=%1
@@ -54,10 +55,11 @@ if [%3]==[] (
 :: ------------- help menu --------------- ::
 if %action%=="help" (
     echo.
-    echo   -------------------------------------------------------------------------------------------------
+    echo   --------------------------------------------------------------------------------------------------------
     echo    Command Syntax           Arguments       Action taken
-    echo   -------------------------------------------------------------------------------------------------
+    echo   --------------------------------------------------------------------------------------------------------
     echo    rlogin                                   Launches SSH session
+    echo    rlogin portal                            Launches SSH session into the VT CS portal
     echo.
     echo    rlogin help                              Displays help menu
     echo.
@@ -67,7 +69,7 @@ if %action%=="help" (
     echo.
     echo    rlogin [pushup/pu]       [src] [dest]    Uploads files from [src] path on Windows to the RLogin
     echo                                             path, inside the home directory, specified by [dest]
-    echo   -------------------------------------------------------------------------------------------------
+    echo   --------------------------------------------------------------------------------------------------------
     
     :: jump out of script
     goto exit
@@ -77,6 +79,14 @@ if %action%=="help" (
 if %action%=="in" (
     echo   Starting SSH Session...
     ssh %g_user%@%g_address%
+    
+    :: jump out of script
+    goto exit
+)
+
+if %action%=="portal" (
+    echo   Starting SSH Portal Session...
+    ssh %g_user%@%g_portal_address%
     
     :: jump out of script
     goto exit
