@@ -22,11 +22,11 @@ echo.
 echo -----===== [VT CS Remote Login Helper Script] =====-----
 
 :: set up "global" variables used by most actions
-set g_user="cwshugg"
-set g_address="rlogin.cs.vt.edu"
-set g_portal_address="portal.cs.vt.edu"
-set g_homedir="/home/ugrads/nonmajors/"%g_user:"=%"/"
-set g_defaultdir="C:\Users\Connor\Desktop\"
+set g_user="<username>"
+set g_address="<rlogin address>"
+set g_portal_address="<rlogin portal address>"
+set g_homedir="<path to home directory on server>"
+set g_defaultdir="<default directory on windows>"
 
 :: get the first input argument and format it
 set action=%1
