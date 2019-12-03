@@ -22,11 +22,11 @@ echo.
 echo -----===== [VT CS Remote Login Helper Script] =====-----
 
 :: set up "global" variables used by most actions
-set g_user="<username>"
-set g_address="<rlogin address>"
-set g_portal_address="<rlogin portal address>"
-set g_homedir="<path to home directory on server>"
-set g_defaultdir="<default directory on windows>"
+set g_user="cwshugg"
+set g_address="rlogin.cs.vt.edu"
+set g_portal_address="portal.cs.vt.edu"
+set g_homedir="/home/ugrads/nonmajors/"%g_user:"=%"/"
+set g_defaultdir="C:\Users\Connor\Desktop\"
 
 :: get the first input argument and format it
 set action=%1
@@ -87,6 +87,24 @@ if %action%=="in" (
 if %action%=="portal" (
     echo   Starting SSH Portal Session...
     ssh %g_user%@%g_portal_address%
+    
+    :: jump out of script
+    goto exit
+)
+
+:: systems project 4: specific ssh command for server
+if %action%=="sp4" (
+    :: get the correct port to use from argument 3
+    set port=!%3!
+    if [%3]==[] (
+        set port="13650"
+    ) else (
+        set port="!port!"
+    )
+    echo Port = !port!
+
+    echo   "Starting SSH Session (for CS 3214 Systems Project 4 on port !port!)..."
+    ssh -L !port!:localhost:!port! %g_user%@%g_address%
     
     :: jump out of script
     goto exit
