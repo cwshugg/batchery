@@ -95,15 +95,14 @@ if %action%=="portal" (
 :: systems project 4: specific ssh command for server
 if %action%=="sp4" (
     :: get the correct port to use from argument 3
-    set port=!%3!
-    if [%3]==[] (
-        set port="13650"
+    set port=%2
+    if [%2]==[] (
+        set port=13650
     ) else (
-        set port="!port!"
+        set port=!port!
     )
-    echo Port = !port!
 
-    echo   "Starting SSH Session (for CS 3214 Systems Project 4 on port !port!)..."
+    echo   Starting SSH Session for CS 3214 Systems Project 4 on port !port!...
     ssh -L !port!:localhost:!port! %g_user%@%g_address%
     
     :: jump out of script
