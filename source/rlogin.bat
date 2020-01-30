@@ -1,5 +1,5 @@
 :: This is an extensive batch script written to assist with accessing SSH
-:: clients: connecting, moving files on/off, etc. Makes use of SSH and SCP to
+:: clients: connecting, moving files on/off, etc. Makes use of SSH and SFTP to
 :: do most of the work.
 ::
 :: The "global" variables defined a few lines down can be used to adjust
@@ -148,7 +148,7 @@ if %pulldown%==true (
     
     :: copy the files from rlogin
     echo   Copying files from RLogin at:       !pullPath!
-    scp -r %g_user%@%g_address%:!pullPath! !dumpPath!
+    sftp -r %g_user%@%g_address%:!pullPath! !dumpPath!
     
     :: jump out of script
     goto exit
@@ -190,7 +190,7 @@ if %pushup%==true (
     echo       %g_user:"=%@%g_address:"=%:!dumpPath!
     
     :: push files up to the server
-    scp -r !pushPath! %g_user:"=%@%g_address:"=%:!dumpPath!
+    sftp -r !pushPath! %g_user:"=%@%g_address:"=%:!dumpPath!
     
     :: jump out of script
     goto exit
